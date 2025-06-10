@@ -21,6 +21,9 @@
   <h1>服務暫時中斷</h1>
   <p class="queue-info">目前排隊等候人數：約 <span id="queue-number">...</span> 人</p>
   <p class="queue-info">預計等候時間：約 <span id="queue-time">...</span></p>
+  <div class="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
   <p>親愛的旅客，您好：</p>
   <p>目前和欣客運的訂票系統正在進行維護或因流量過大暫時無法使用。我們正努力恢復服務，請稍後再試。</p>
   <p>請勿重複付款，如已完成付款但未收到訂票確認信，請稍後查閱電子郵件，或聯繫客服確認。</p>
@@ -42,7 +45,28 @@
     <li>2024/06/01 - 台北 → 台南 - 14:30 發車</li>
     <li>2024/05/25 - 台中 → 高雄 - 09:15 發車</li>
   </ul>
+  <button class="refresh-btn" onclick="showTransactions()">查看交易明細</button>
+  <button class="refresh-btn" onclick="showProfile()">查看會員資訊</button>
   <button class="refresh-btn" onclick="logout()">登出</button>
+</div>
+
+<!-- 交易明細頁 -->
+<div class="container hidden" id="transactions-container">
+  <h1>交易明細</h1>
+  <ul class="order-list">
+    <li>訂單編號：T20240601001｜金額：NT$ 560｜付款成功</li>
+    <li>訂單編號：T20240525002｜金額：NT$ 410｜付款成功</li>
+  </ul>
+  <button class="refresh-btn" onclick="showDashboard()">返回總覽</button>
+</div>
+
+<!-- 會員資訊頁 -->
+<div class="container hidden" id="profile-container">
+  <h1>會員資訊</h1>
+  <p>姓名：林小明</p>
+  <p>Email：test@example.com</p>
+  <p>手機號碼：0912-345-678</p>
+  <button class="refresh-btn" onclick="showDashboard()">返回總覽</button>
 </div>
 
 <script src="java.js"></script>
