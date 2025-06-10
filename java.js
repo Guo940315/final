@@ -46,10 +46,15 @@ function initializePage() {
 // 模擬登入進入 OTP 驗證畫面
 function simulateLogin() {
     localStorage.setItem("step", "otp");
-    document.getElementById("main-container").classList.add("shake");
+    hideAll();
+    document.getElementById("loading-container").classList.remove("hidden");
+
+    // 模擬等待後轉跳 OTP 頁
     setTimeout(() => {
+        document.getElementById("loading-container").classList.add("hidden");
         showOTPPage();
-    }, 500);
+    }, 15000); // 15秒後進入 OTP 頁
+    showNotification("即將進入頁面…");
 }
 
 function showOTPPage() {
@@ -128,3 +133,14 @@ function hideAll() {
 window.addEventListener("beforeunload", function () {
     localStorage.removeItem("step");
 });
+
+function showNotification(message) {
+    const notify = document.getElementById("notification");
+    notify.textContent = message;
+    notify.classList.remove("hidden");
+    notify.classList.add("show");
+    setTimeout(() => {
+        notify.classList.remove("show");
+        setTimeout(() => notify.classList.add("hidden"), 500);
+    }, 3000); // 顯示 3 秒
+}
