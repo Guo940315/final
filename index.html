@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>和欣客運 - 服務暫時中斷</title>
+  <!-- 引入 CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateQueueNumber()">
+<div class="header">
+  <img src="img/LOGO.png" alt="和欣客運 Logo" class="logo">
+  <button class="login-btn"><span>登入</span></button>
+</div>
+<div class="nav">
+  <a href="#">網路訂購票</a> | <a href="#">查詢/變更訂單</a> | <a href="#">乘車資訊</a> | <a href="#">會員專區</a> | <a href="#">乘客服務</a>
+</div>
+<div class="container">
+  <h1>服務暫時中斷</h1>
+  <p class="queue-info">目前排隊等候人數：約 <span id="queue-number">...</span> 人</p>
+  <p class="queue-info">預計等候時間：約 <span id="queue-time">...</span></p>
+  <p>親愛的旅客，您好：</p>
+  <p>目前和欣客運的訂票系統正在進行維護或因流量過大暫時無法使用。我們正努力恢復服務，請稍後再試。</p>
+  <p>請勿重複付款，如已完成付款但未收到訂票確認信，請稍後查閱電子郵件，或聯繫客服確認。</p>
+  <button class="refresh-btn" onclick="location.reload();">重新整理</button>
+  <p style="margin-top: 20px; font-size: 14px; color: #666;">24h客服專線：0800-002-377 地址：台南市新營區長榮路三段75號</p>
+</div>
+<!-- 引入 JavaScript -->
+<script src="java.js"></script>
+</body>
+</html>
