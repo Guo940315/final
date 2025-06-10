@@ -81,3 +81,94 @@ p {
 .login-btn:hover {
     color: #dc3545;
 }
+/* 錯誤動畫 */
+.shake {
+    animation: shake 0.3s;
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input.error {
+    border: 2px solid red;
+}
+
+/* 隱藏容器 */
+.hidden {
+    display: none;
+}
+
+/* 響應式設計 */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .nav {
+        font-size: 16px;
+    }
+    .logo {
+        height: 40px;
+    }
+}
+
+.order-list {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 0;
+    list-style-type: none;
+}
+.order-list li {
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 進度條樣式 */
+.progress-bar {
+    background: #e0e0e0;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    transition: width 1s ease-in-out;
+}
+
+/* 小螢幕友善 */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .nav {
+        font-size: 16px;
+        flex-wrap: wrap;
+    }
+    .logo {
+        height: 40px;
+    }
+    .order-list {
+        max-width: 90%;
+    }
+    input {
+        width: 90%;
+    }
+}
