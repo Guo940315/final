@@ -50,10 +50,12 @@ function simulateLogin() {
     document.getElementById("loading-container").classList.remove("hidden");
 
     // 模擬等待後轉跳 OTP 頁
+    // 模擬等待後轉跳 OTP 頁（隨機 5~12 秒）
+    const delay = Math.floor(Math.random() * 10000) + 10000; // 5000ms~13000ms
     setTimeout(() => {
         document.getElementById("loading-container").classList.add("hidden");
         showOTPPage();
-    }, 15000); // 15秒後進入 OTP 頁
+    }, delay);
     showNotification("即將進入頁面…");
 }
 
